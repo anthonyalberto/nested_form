@@ -57,6 +57,7 @@ module NestedForm
       
       args << (options.delete(:href) || "javascript:void(0)")
       args << options
+      object[:_destroy] = false
       (hidden_field(:_destroy) << @template.link_to(*args, &block)).html_safe
     end
 
